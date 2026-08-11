@@ -9,6 +9,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Serve React frontend
+app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
+
 // API Routes
 app.use("/api", deploymentRoutes);
 
